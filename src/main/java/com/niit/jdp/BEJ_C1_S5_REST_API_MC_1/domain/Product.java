@@ -20,5 +20,11 @@ public class Product {
 
     public Product() {
     }
+
+    public Product(int productId, String productName, String manufacturer) {
+        this.productId = productId;
+        this.productName = productName;
+        this.manufacturer = manufacturer;
+    }
 }
 
