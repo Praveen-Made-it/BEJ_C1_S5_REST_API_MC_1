@@ -12,10 +12,7 @@ import com.niit.jdp.BEJ_C1_S5_REST_API_MC_1.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping
@@ -33,7 +30,10 @@ public class ProductController {
         return new ResponseEntity<>(productService.addProduct(product), HttpStatus.CREATED);
     }
 
-
+    @GetMapping(value = "/products")
+    public ResponseEntity<?> getAllProducts() {
+        return new ResponseEntity<>(productService.getAllProduct(), HttpStatus.OK);
+    }
 }
 
 
